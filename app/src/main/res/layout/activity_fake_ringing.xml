@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rescuex_za.rescuex.FakeRingingActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textView1"
+        android:text="@string/incomingcall"/>
+    <TextView
+        android:id="@+id/chosenfakename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/fakecallname"
+        android:layout_above="@+id/imageView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp" />
+
+    <TextView
+        android:id="@+id/chosenfakenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:text="@string/fakecallnumber"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/answercall"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/caller"
+        android:layout_above="@+id/chosenfakenumber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#87b7be"/>
+
+    <ImageButton
+        android:id="@+id/answercall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="@android:color/transparent"
+        app:srcCompat="@drawable/acceptbtn" />
+
+    <ImageButton
+        android:id="@+id/rejectcall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:backgroundTint="@android:color/transparent"
+        app:srcCompat="@drawable/declinebtn" />
+
+
+</RelativeLayout>

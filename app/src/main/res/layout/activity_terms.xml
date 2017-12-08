@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_dark"
+    tools:context="com.rescuex_za.rescuex.Terms">
+
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Terms and Conditions"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="?android:attr/textColorSecondary"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/terms_of_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_outline"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/blank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Falsification of Identity"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By using this mobile application you swear to not  use someone else's identity. The information you provide when registering is your information and not someone else's, otherwise if you're caught that you used someone's identity they may be legal repercussions layed upon you."
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. UnLawful Advances"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By using this mobile application you swear not to carry out any unlawful activities to fulfill your personal agendas. If you do carry out any unlawful activities with this application the owner of this application has a right to hand your information to the goverment officials upon request of your information provided they're following the correct channels and that the information they're requesting will not put you or anyone using this mobile application in danger. "
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3.Safety Practices "
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By using this application you swear to only use it when you are in a compromising situation because using this application just to get someone else's attention could result in them not responding on time when you really need them to rescue you when you're in danger.  However we do recommed that you test this application upon installation just to familarize yourself on how this app operates."
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Loss of signal and communication"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="It is our mission to ensure that you are safe all the time. However we will not be held responsible should there be any loss of signal or network and delay in sending alerting message upon app usage but we try by all means to get our users to explore all the functions of this application to the fullest."
+                android:textColor="@color/colorPrimaryDark" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

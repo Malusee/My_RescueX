@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">RescueX</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <string name="register">Welcome to RescueX</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="app_tools">Tools</string>
+
+
+    <string name="title_regconfirm_layout">Registration Successful</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="thirtysecs">10 secs</string>
+    <string name="onemin">30 secs</string>
+    <string name="fivemins">1 min</string>
+    <string name="make_call">Call</string>
+    <string name="fake_name">Enter name</string>
+    <string name="fake_number">Enter phone number</string>
+    <string name="title_activity_fake_ringing">FakeRingingActivity</string>
+    <string name="incomingcall">Incoming Call</string>
+    <string name="fakecallname">Genny Nnaji</string>
+    <string name="fakecallnumber">080371558000</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="torch">RescueX FlashLight</string>
+    <string name="third_party">5. Third-Party Information</string>
+    <string name="third_info">When you add friends or open your contacts list through RescueX and add them as your emergency alert receivers when you are in danger and vice/versa, that is the only time your information is going to be provided to a third party. We may at a later provide your information to government officials if it is incases of emergency and they need to run a certain investigation, but that will only apply if proper channels are being followed. Should they be any changes in our third-party privacy policies we may amend other policies but all those changes will be also be updated on RescueX and our website. </string>
+    <string name="cookie">4. Cookies</string>
+    <string name="cookies">We use cookies to make the app respond faster as it will remember most of your activities so that next time you use this app it will not be slow and we use cokies to identify our users activities so that we will know which aspects of this mobile app most of our users use and we will then know which aspects need to be further improved. </string>
+    <string name="location">3. User Location</string>
+    <string name="user_location"> We collect your location when you press the RESCUE button in emergencies and we forward that to your friends so that they will know that you need their help and give them your exact location so that they will find you before anything bad happens to you. We store this information in our database for 30 days and we delete it we do this so that if you are reported as missing this is going to make it easier for your friends and family to identify you as your last reported location would be used to track where you might possibly be. </string>
+    <string name="privacy_contacts"> 2. Your Contacts and Friends </string>
+    <string name="privacy_friends"> When you install RescueX on your mobile phone we read and display your phones contacts, we read these contacts to make it easier for you to know which of your friends have RescueX installed on their mobile phone and if they do not have the app installed we give you an option to share or tell them about this app because when you press the RESCUE Button the only people who will be notified that you need help is your friends. We do not store you contacts List in our database but only the people you sent requests to, this is because we want to make sure that when ever it is the case of emergency they are notified as early as possible.</string>
+    <string name="sign_up_info"> 1. RescueX Account Registration</string>
+    <string name="sign_up"> When you initially use RescueX you are required to register an account, Upon registration you are required to provide your Full name , phone numbers, your email address and that you create a password of your choice. We store all this information in our database and we use it to make it easier for your friends to identify you when you are in danger and we use your phone number as a primary identifier and the name provided us with when registering. We also use your email address for coomunicating any changes and improvements done on the app and most importantly we will use it to reset your password incase you forget it, this is mainly because we do not want anyone to have access toyour account without your consent.</string>
+    <string name="privacy_outline">It is our number one priority to ensure that our users are safe at all times. That includes your personal information you provide when creating or registering a RescueX account. RescueX collects your fullname(s), your mobile phone number , email address and mainly your location. We are confident in letting you know that your information is safe with us, whichever information is only gonna be used by RescueX in app main functionality which is the emergency alerts and messaging for our users to easily identify if you or your loved ones are in danger. Please read our privacy policy to have a clear idea on the information we collect and what we use it for.  </string>
+    <string name="terms_outline">RESCUEX HOLDINGS (Pty)Ltd.("RescueX") mainly provides you with a safety shelter for you and your loved ones. We also provides you with messaging, flashlight, fake calling and other fun functions to users around the Globe. We recommend familiarizing yourself with our terms and condictions including our privacy policies so that you know how you are required to use this mobile application. This will aid in you knowing which activities are regarded as illegal activities when using our mobile application and what is expected from you as the user. You agree to our terms and conditions(including our privacy policies) by installing, accessing or using this mobile application. We hope you will enjoy using our services and please do keep us posted on what you would like to see in this mobile application in the future</string>
+    <string name="share">Thank you for using RescueX.  To ensure that you, your friends and family are safe Please share this Mobile Application with them if they do not have it installed on their phones by clicking the button below.</string>
+    <string name="thank_you">We thank you for using RescueX for improving our users experience please help us improve the app.</string>
+    <string name="password_recover">Your Password has been reset please check your emails for your new password.</string>
+    <string name="new_password">Your can change your new default password on your profile by clicking on change password.</string>
+    <string name="condolences">We are sorry that you forgot your. Please fill in the fields below to retrieve your saved data.</string>
+    <string name="Menu_page">This is the main menu</string>
+    <string name="user_number"> Phone Number</string>
+    <string name="user_email">Email Address</string>
+    <string name="user_password">Password</string>
+    <string name="user_con_pass">Confirm Password</string>
+    <string name="sign_out">Log out</string>
+    <string name="status">Hey there, I am using RescueX.</string>
+    <string name="display_name">Display Name</string>
+    <string name="rescuex_users"> RescueX Users</string>
+    <string name="Profile_picture">Change Picture</string>
+    <string name="status_button">Change Status</string>
+    <string name="Register_summary">To fully access the RescueX Emergency Alert Services, Please Register below.</string>
+    <string name="name">contact username</string>
+    <string name="number">0826890021</string>
+    <string name="feeds">Thank you for using RescueX. Safety is not just our first name but it is embeded in our genes, that is why we are asking you to help us ensure that you are safe at all times.</string>
+    <string name="suggestions">Let us know what you would like to see on RescueX and which aspects of this mobile App you would like to see being improved.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_history">History</string>
+    <string name="title_activity_friends">Friends</string>
+
+</resources>

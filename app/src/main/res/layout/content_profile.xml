@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    tools:context="com.rescuex_za.rescuex.Profile">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="86dp"
+        android:layout_weight="1"
+        android:background="@drawable/my_profile"/>
+
+    <TextView
+        android:id="@+id/disp_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/display_name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/disp_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Hey there, I'm with the RescueX team."
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/picture_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/status_btn"
+        android:layout_alignBottom="@+id/status_btn"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="28dp"
+        android:text="@string/Profile_picture"/>
+
+    <Button
+        android:id="@+id/status_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="29dp"
+        android:text="@string/status_button"/>
+
+</RelativeLayout>

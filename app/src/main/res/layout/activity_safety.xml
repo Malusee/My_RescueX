@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:context="com.rescuex_za.rescuex.Safety">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Emergency Alerts"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="16dp"
+        android:text="If RESCUE button is pressed your friends will receive a message that you need help and your location will be also sent to them along with the message.  The location will be updated to them if you move 5 metres from the point you pressed the button. "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView23"
+        android:layout_marginTop="30dp"
+        android:text="Safety Tips"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView24"
+        android:layout_marginTop="25dp"
+        android:text="You should always tell at least one friend if you going somewhere , Keep your location turned on if you're not at home or somewhere safe to make it easier for your emergency alert message to be quickly sent to your friends bacuse if your location is off it will first promt you to turn on your location."
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView25"
+        android:layout_marginTop="12dp"
+        android:text="Try and add people who are not too far from where you are as your friends this is because they're the one's who should react quick when you need them to come rescue you when you're in danger."
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>
