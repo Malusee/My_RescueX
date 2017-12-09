@@ -13,9 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Login extends AppCompatActivity {
     private EditText etl_email, etl_pass;
@@ -26,15 +30,21 @@ public class Login extends AppCompatActivity {
 
     private ProgressDialog mLoginProgress;
     private FirebaseAuth mAuth;
+
+    private DatabaseReference mUserDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        mAuth = FirebaseAuth.getInstance();
+
         mLoginProgress= new ProgressDialog(this);
 
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        mAuth = FirebaseAuth.getInstance();
+
 
         etl_email=(EditText)findViewById(R.id.login_email);
         etl_pass=(EditText)findViewById(R.id.login_password);
@@ -85,10 +95,25 @@ public class Login extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     mLoginProgress.dismiss();
-                    Intent logIntent= new Intent(Login.this, LoginConfirm.class);
-                    logIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(logIntent);
-                    finish();
+
+                    String current_user_id = mAuth.getCurrentUser().getUid();
+                    String DeviceToken = FirebaseInstanceId.getInstance().getToken();
+
+                    mUserDatabase.child(current_user_id).child("device_token").setValue(DeviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                            Intent logIntent= new Intent(Login.this, LoginConfirm.class);
+                            logIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(logIntent);
+                            finish();
+
+                        }
+                    });
+
+
+
+
                 } else{
                     mLoginProgress.hide();
                     Toast.makeText(Login.this, "Login Failed!... Please check your details and try again." + task.getException(),

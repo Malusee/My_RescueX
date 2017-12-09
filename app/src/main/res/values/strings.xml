@@ -80,5 +80,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_history">History</string>
     <string name="title_activity_friends">Friends</string>
+    <string name="emergency_list">Emergency Contacts</string>
+    <string name="change_display_name">Change Display Name</string>
+    <string name="about_developer">About Developer</string>
 
 </resources>

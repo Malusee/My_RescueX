@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 
@@ -89,37 +90,52 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
 
-                if (!task.isSuccessful()) {
+                if(task.isSuccessful()){
+
+
+                    FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+                    String uid = current_user.getUid();
+
+                    mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+                    String device_token = FirebaseInstanceId.getInstance().getToken();
+
+                    HashMap<String, String> userMap = new HashMap<>();
+                    userMap.put("Name", display_name);
+                    userMap.put("status", "Hi there I'm using Lapit Chat App.");
+                    userMap.put("Profile_picture", "default");
+                    userMap.put("thumb_image", "default");
+                    userMap.put("device_token", device_token);
+
+                    mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                            if(task.isSuccessful()){
+
+                                mRegProgress.dismiss();
+                                Toast.makeText(RegisterActivity.this, "Registration Successful.", Toast.LENGTH_LONG).show();
+
+                                Intent mainIntent = new Intent(RegisterActivity.this, RegistrationConfirm.class);
+                                mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(mainIntent);
+                                finish();
+
+                            }
+
+                        }
+                    });
+
+
+                } else {
 
                     mRegProgress.hide();
-                    Toast.makeText(RegisterActivity.this, "Registration failed... Please check your internet connection and try again" + task.getException(),
-                            Toast.LENGTH_LONG).show();
-
-                } else{
-
-                    FirebaseUser current_user=FirebaseAuth.getInstance().getCurrentUser();
-                    String uid=current_user.getUid();
-                    mDatabase=FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-
-                    HashMap<String, String> userMap= new HashMap<>();
-                    userMap.put("Name", display_name);
-                    userMap.put("status","Hey there, I'm with the RescueX team...");
-                    userMap.put("Profile_picture","default");
-                    userMap.put("thumb_image", "default");
-
-                    mDatabase.setValue(userMap);
-                    mRegProgress.dismiss();
-                    Intent regIntent= new Intent(RegisterActivity.this, RegistrationConfirm.class);
-                    regIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(regIntent);
-                    finish();
+                    Toast.makeText(RegisterActivity.this, "Registration failed, please check your internet connection and try again.", Toast.LENGTH_LONG).show();
 
                 }
+
             }
-
         });
-
-
 
     }
 }
