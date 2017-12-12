@@ -97,7 +97,7 @@ public class History extends AppCompatActivity implements  NavigationView.OnNavi
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_friends_layout) {
-            Intent searchIntent= new Intent(History.this, Friends.class);
+            Intent searchIntent= new Intent(History.this, MyFriends.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 

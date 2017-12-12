@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,8 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +29,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
@@ -44,7 +40,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import id.zelory.compressor.Compressor;
@@ -92,8 +87,8 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String name = dataSnapshot.child("Name").getValue().toString();
-                final String image = dataSnapshot.child("Profile_picture").getValue().toString();
+                String name = dataSnapshot.child("name").getValue().toString();
+                final String image = dataSnapshot.child("profile_picture").getValue().toString();
                 String status = dataSnapshot.child("status").getValue().toString();
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
@@ -217,7 +212,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_friends_layout) {
-            Intent searchIntent = new Intent(Profile.this, Friends.class);
+            Intent searchIntent = new Intent(Profile.this, MyFriends.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
@@ -298,7 +293,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
 
 
                 StorageReference filepath = mPictureStorage.child("profile_pictures").child(current_user_id + "jpg");
-                final StorageReference thumb_file = mPictureStorage.child("Profile_picture").child("thumb").child(current_user_id + ".jpg");
+                final StorageReference thumb_file = mPictureStorage.child("profile_picture").child("thumb").child(current_user_id + ".jpg");
 
                 filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -315,7 +310,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
                                     if (thumb_task.isSuccessful()) {
 
                                         Map updateHashmap = new HashMap<>();
-                                        updateHashmap.put("Profile_picture", download_url);
+                                        updateHashmap.put("profile_picture", download_url);
                                         updateHashmap.put("thumb_image", thumbdownUrl);
                                         mUserDatabase.updateChildren(updateHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

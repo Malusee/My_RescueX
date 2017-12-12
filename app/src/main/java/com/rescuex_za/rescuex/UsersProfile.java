@@ -60,7 +60,7 @@ public class UsersProfile extends AppCompatActivity {
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mFriendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req");
-        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("Friends");
+        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("MyFriends");
         mNotificationDatabase = FirebaseDatabase.getInstance().getReference().child("notifications");
         mCurrent_user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -79,7 +79,7 @@ public class UsersProfile extends AppCompatActivity {
 
 
         mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setTitle("Loading User Data");
+        mProgressDialog.setTitle("Loading UsersActivity Data");
         mProgressDialog.setMessage("Please wait while we load the user data.");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
@@ -90,9 +90,9 @@ public class UsersProfile extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String display_name = dataSnapshot.child("Name").getValue().toString();
+                String display_name = dataSnapshot.child("name").getValue().toString();
                 String status = dataSnapshot.child("status").getValue().toString();
-                String image = dataSnapshot.child("Profile_picture").getValue().toString();
+                String image = dataSnapshot.child("profile_picture").getValue().toString();
 
                 mProfileName.setText(display_name);
                 mProfileStatus.setText(status);
@@ -277,8 +277,8 @@ public class UsersProfile extends AppCompatActivity {
                     final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
 
                     Map friendsMap = new HashMap();
-                    friendsMap.put("Friends/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
-                    friendsMap.put("Friends/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
+                    friendsMap.put("MyFriends/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
+                    friendsMap.put("MyFriends/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
 
 
                     friendsMap.put("Friend_req/" + mCurrent_user.getUid() + "/" + user_id, null);
@@ -319,8 +319,8 @@ public class UsersProfile extends AppCompatActivity {
                 if(mCurrent_state.equals("friends")){
 
                     Map unfriendMap = new HashMap();
-                    unfriendMap.put("Friends/" + mCurrent_user.getUid() + "/" + user_id, null);
-                    unfriendMap.put("Friends/" + user_id + "/" + mCurrent_user.getUid(), null);
+                    unfriendMap.put("MyFriends/" + mCurrent_user.getUid() + "/" + user_id, null);
+                    unfriendMap.put("MyFriends/" + user_id + "/" + mCurrent_user.getUid(), null);
 
                     mRootRef.updateChildren(unfriendMap, new DatabaseReference.CompletionListener() {
                         @Override

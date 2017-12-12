@@ -6,8 +6,8 @@ package com.rescuex_za.rescuex;
 
 public class Users {
 
-    public String Name;
-    public String Profile_picture;
+    public String name;
+    public String profile_picture;
     public String status;
     public String thumb_image;
 
@@ -16,27 +16,27 @@ public class Users {
 
     }
 
-    public Users(String name, String image, String status, String thumb_image) {
-        this.Name = name;
-        this.Profile_picture = image;
+    public Users(String name, String profile_picture, String status, String thumb_image) {
+        this.name = name;
+        this.profile_picture = profile_picture;
         this.status = status;
         this.thumb_image = thumb_image;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
-    public String getImage() {
-        return Profile_picture;
+    public String getProfile_picture() {
+        return profile_picture;
     }
 
-    public void setImage(String image) {
-        this.Profile_picture = image;
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
     }
 
     public String getStatus() {

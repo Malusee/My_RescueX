@@ -97,7 +97,7 @@ public class Share extends AppCompatActivity implements  NavigationView.OnNaviga
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_friends_layout) {
-            Intent searchIntent= new Intent(Share.this, Friends.class);
+            Intent searchIntent= new Intent(Share.this, MyFriends.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
