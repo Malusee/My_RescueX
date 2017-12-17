@@ -158,12 +158,12 @@ public class MenuActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (item.getItemId() == R.id.action_settings) {
-            Intent notifIntent= new Intent(MenuActivity.this, Notifications.class);
+            Intent notifIntent= new Intent(MenuActivity.this, Settings.class);
             startActivity(notifIntent);
         }
         if(item.getItemId() == R.id.all_users){
 
-            Intent usersIntent= new Intent(MenuActivity.this, UsersActivity.class);
+            Intent usersIntent= new Intent(MenuActivity.this, MyUsersActivity.class);
             startActivity(usersIntent);
 
         }
@@ -203,7 +203,7 @@ public class MenuActivity extends AppCompatActivity
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_friends_layout) {
-            Intent searchIntent = new Intent(MenuActivity.this, MyFriends.class);
+            Intent searchIntent = new Intent(MenuActivity.this, FriendsActivity.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 

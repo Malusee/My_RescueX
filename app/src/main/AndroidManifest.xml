@@ -50,37 +50,19 @@
         <activity android:name=".Notifications" />
         <activity android:name=".Home" />
 
-        <receiver
-            android:name=".FakeCallReceiver"
-            android:enabled="true"
-            android:exported="true" />
+        <receiver android:name=".FakeCallReceiver" />
 
-        <activity android:name=".FakeCalling" />
-        <activity android:name=".FlashLight" />
-        <activity android:name=".FakeRingingActivity" />
         <activity
-            android:name=".Profile"
-            android:label="Profile"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".FakeCalling"
+            android:label="Fake Calling"
+            android:parentActivityName=".MenuActivity" />
         <activity
-            android:name=".Share"
-            android:label="Share App"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".FlashLight"
+            android:label="Flashlight"
+            android:parentActivityName=".MenuActivity" />
         <activity
-            android:name=".Help"
-            android:label="Help"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Feedback"
-            android:label="Feedback"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".UsersActivity"
+            android:name=".MyUsersActivity"
             android:label="RescueX Users"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SignOut"
-            android:label="Sign Out"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".About" />
         <activity android:name=".ForgotPassword" />
@@ -93,13 +75,19 @@
         <activity android:name=".RegistrationConfirm" />
         <activity android:name=".Safety" />
         <activity android:name=".Terms" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".statusActivity" />
+        <activity
+            android:name=".Settings"
+            android:label="Settings"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".statusActivity"
+            android:label="Status"
+            android:parentActivityName=".Profile" />
         <activity android:name=".LoginConfirm" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".UsersProfile">
+        <activity android:name=".ProfileActivity">
             <intent-filter>
                 <action android:name="com.rescuex_za.rescuex_TARGET_NOTIFICATION" />
 
@@ -107,16 +95,62 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".History"
-            android:label="@string/title_activity_history"
+            android:name=".FriendsActivity"
+            android:label="RescueX Messaging"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MyFriends"
-            android:label="@string/title_activity_friends"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DeveloperInfo" />
-        <activity android:name=".EmergencyList" />
-        <activity android:name=".ChatActivity"></activity>
+            android:name=".DeveloperInfo"
+            android:label="Developer Information"
+            android:parentActivityName=".Settings" />
+        <activity
+            android:name=".EmergencyList"
+            android:label="Choose emergency contacts"
+            android:parentActivityName=".Settings" />
+        <activity android:name=".ChatActivity" />
+        <activity
+            android:name=".History"
+            android:label="History"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".Feedback"
+            android:label="Feedback"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".Help"
+            android:label="Help"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".Profile"
+            android:label="Profile"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".mUsersActivity"
+            android:label="Search Users"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".Share"
+            android:label="Share"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".SignOut"
+            android:label="Sign out"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".UsersActivity"
+            android:label="Search Users"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".Chats"
+            android:label=" RescueX Messaging"
+            android:parentActivityName=".MenuActivity" />
+        <activity android:name=".FakeRingingActivity" />
+        <activity
+            android:name=".FeedbackMail"
+            android:label="Give us your Feedback"
+            android:parentActivityName=".Feedback"></activity>
     </application>
 
 </manifest>

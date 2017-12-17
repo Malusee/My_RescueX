@@ -15,17 +15,17 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
+public class FriendsActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
 
-public class MyFriends extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
-    ImageButton add_contacts;
-    TextView friend_one;
 
     private ViewPager mViewPager;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private TabLayout mTabLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +35,11 @@ public class MyFriends extends AppCompatActivity implements  NavigationView.OnNa
         setSupportActionBar(toolbar);
 
         // Tabs
-        mViewPager=(ViewPager)findViewById(R.id.friends_tabPager);
-        mSectionsPagerAdapter= new SectionsPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.friends_tabPager);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        mTabLayout=(TabLayout)findViewById(R.id.friends_tabs);
+        mTabLayout = (TabLayout) findViewById(R.id.friends_tabs);
         mTabLayout.setupWithViewPager(mViewPager);
 
 
@@ -50,6 +50,13 @@ public class MyFriends extends AppCompatActivity implements  NavigationView.OnNa
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+    }
+    private void sendToStart() {
+
+        Intent startIntent = new Intent(FriendsActivity.this, Home.class);
+        startActivity(startIntent);
+        finish();
 
     }
 
@@ -72,17 +79,28 @@ public class MyFriends extends AppCompatActivity implements  NavigationView.OnNa
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        super.onOptionsItemSelected(item);
+        if(item.getItemId()== R.id.log_out){
+            FirebaseAuth.getInstance().signOut();
+            sendToStart();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
+
+        //noinspection SimplifiableIfStatement
+        if (item.getItemId() == R.id.action_settings) {
+            Intent notifIntent= new Intent(FriendsActivity.this, Settings.class);
+            startActivity(notifIntent);
+        }
+        if(item.getItemId() == R.id.all_users){
+
+            Intent usersIntent= new Intent(FriendsActivity.this, MyUsersActivity.class);
+            startActivity(usersIntent);
+
+        }
+
+        return true;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -92,36 +110,36 @@ public class MyFriends extends AppCompatActivity implements  NavigationView.OnNa
         int id = item.getItemId();
 
         if (id == R.id.nav_profile_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, Profile.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, Profile.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_users_activity) {
-            Intent searchIntent = new Intent(MyFriends.this, UsersActivity.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, UsersActivity.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_history_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, History.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, History.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_help_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, Help.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, Help.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_feedback_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, Feedback.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, Feedback.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_signout_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, SignOut.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, SignOut.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         } else if (id == R.id.nav_friends_layout) {
-            Intent searchIntent= new Intent(MyFriends.this, MyFriends.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, FriendsActivity.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
         } else if (id == R.id.nav_share) {
-            Intent searchIntent= new Intent(MyFriends.this, Share.class);
+            Intent searchIntent = new Intent(FriendsActivity.this, Share.class);
             startActivity(searchIntent);
             overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
 
@@ -131,6 +149,5 @@ public class MyFriends extends AppCompatActivity implements  NavigationView.OnNa
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
+

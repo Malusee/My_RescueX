@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.rescuex_za.rescuex.HelpActivity"
-    android:background="@android:color/background_dark">
+    tools:context="com.rescuex_za.rescuex.Help"
+    android:background="@android:color/white">
 
 
     <LinearLayout
@@ -21,13 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="@android:color/black"
             android:ems="10"
             android:hint="How can we help you?"
             android:inputType="textPersonName"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@android:color/white"
-            android:textColorHint="@android:color/white"
+            android:textColor="@color/black"
+            android:textColorHighlight="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textColorLink="@android:color/white" />
 
         <Button
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:text="FAQ's"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:layout_centerHorizontal="true" />
 

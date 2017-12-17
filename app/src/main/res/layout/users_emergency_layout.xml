@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:selectableItemBackground">
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="33dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_single_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/checkBox"
         android:src="@drawable/my_profile" />
 
     <TextView
@@ -33,15 +42,4 @@
         android:layout_below="@+id/user_single_name"
         android:layout_marginTop="10dp"
         android:text="@string/users_status" />
-
-    <ImageView
-        android:id="@+id/user_single_online_icon"
-        android:layout_width="12dp"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/user_single_name"
-        android:layout_marginLeft="10dp"
-        android:layout_toEndOf="@+id/user_single_name"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/online_icon" />
-
 </RelativeLayout>

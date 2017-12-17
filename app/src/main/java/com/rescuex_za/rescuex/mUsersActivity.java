@@ -16,7 +16,8 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UsersActivity extends AppCompatActivity {
+public class mUsersActivity extends AppCompatActivity {
+
 
     private RecyclerView mUsersList;
 
@@ -28,7 +29,8 @@ public class UsersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users2);
+        setContentView(R.layout.users_activty_layout);
+
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -67,7 +69,7 @@ public class UsersActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Intent profileIntent = new Intent(UsersActivity.this, ProfileActivity.class);
+                        Intent profileIntent = new Intent(mUsersActivity.this, ProfileActivity.class);
                         profileIntent.putExtra("user_id", user_id);
                         startActivity(profileIntent);
 

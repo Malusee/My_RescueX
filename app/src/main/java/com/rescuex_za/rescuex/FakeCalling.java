@@ -26,6 +26,7 @@ public class FakeCalling extends AppCompatActivity {
     private RadioButton firstOption;
     private RadioButton secondOption;
     private RadioButton thirdOption;
+    private RadioButton forthOption;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class FakeCalling extends AppCompatActivity {
         firstOption = (RadioButton)findViewById(R.id.radio0);
         secondOption = (RadioButton)findViewById(R.id.radio1);
         thirdOption = (RadioButton)findViewById(R.id.radio2);
+        forthOption = (RadioButton)findViewById(R.id.radio3);
 
         Button fakeCallButton = (Button)findViewById(R.id.fakecalls);
         fakeCallButton.setOnClickListener(new View.OnClickListener(){
@@ -74,27 +76,7 @@ public class FakeCalling extends AppCompatActivity {
         });
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_menu_drawer, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
     private int getSelectedAnswer(int radioSelected){
         int answerSelected = 0;
         if(radioSelected == R.id.radio0){
@@ -104,6 +86,9 @@ public class FakeCalling extends AppCompatActivity {
         }
         if(radioSelected == R.id.radio2){
             answerSelected = 60;
+        }
+        if(radioSelected == R.id.radio3){
+            answerSelected = 300;
         }
         return answerSelected;
     }

@@ -1,7 +1,6 @@
 package com.rescuex_za.rescuex;
 
 import android.app.ProgressDialog;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +26,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UsersProfile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private ImageView mProfileImage;
     private TextView mProfileName, mProfileStatus, mProfileFriendsCount;
@@ -60,7 +57,7 @@ public class UsersProfile extends AppCompatActivity {
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mFriendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req");
-        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("MyFriends");
+        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("FriendsActivity");
         mNotificationDatabase = FirebaseDatabase.getInstance().getReference().child("notifications");
         mCurrent_user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -79,7 +76,7 @@ public class UsersProfile extends AppCompatActivity {
 
 
         mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setTitle("Loading UsersActivity Data");
+        mProgressDialog.setTitle("Loading MyUsersActivity Data");
         mProgressDialog.setMessage("Please wait while we load the user data.");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
@@ -97,7 +94,7 @@ public class UsersProfile extends AppCompatActivity {
                 mProfileName.setText(display_name);
                 mProfileStatus.setText(status);
 
-                Picasso.with(UsersProfile.this).load(image).placeholder(R.drawable.my_profile).into(mProfileImage);
+                Picasso.with(ProfileActivity.this).load(image).placeholder(R.drawable.my_profile).into(mProfileImage);
 
                 if(mCurrent_user.getUid().equals(user_id)){
 
@@ -222,7 +219,7 @@ public class UsersProfile extends AppCompatActivity {
 
                             if(databaseError != null){
 
-                                Toast.makeText(UsersProfile.this, "There was some error in sending request", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, "There was some error in sending request", Toast.LENGTH_SHORT).show();
 
                             } else {
 
@@ -277,8 +274,8 @@ public class UsersProfile extends AppCompatActivity {
                     final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
 
                     Map friendsMap = new HashMap();
-                    friendsMap.put("MyFriends/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
-                    friendsMap.put("MyFriends/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
+                    friendsMap.put("FriendsActivity/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
+                    friendsMap.put("FriendsActivity/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
 
 
                     friendsMap.put("Friend_req/" + mCurrent_user.getUid() + "/" + user_id, null);
@@ -303,7 +300,7 @@ public class UsersProfile extends AppCompatActivity {
 
                                 String error = databaseError.getMessage();
 
-                                Toast.makeText(UsersProfile.this, error, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, error, Toast.LENGTH_SHORT).show();
 
 
                             }
@@ -319,8 +316,8 @@ public class UsersProfile extends AppCompatActivity {
                 if(mCurrent_state.equals("friends")){
 
                     Map unfriendMap = new HashMap();
-                    unfriendMap.put("MyFriends/" + mCurrent_user.getUid() + "/" + user_id, null);
-                    unfriendMap.put("MyFriends/" + user_id + "/" + mCurrent_user.getUid(), null);
+                    unfriendMap.put("FriendsActivity/" + mCurrent_user.getUid() + "/" + user_id, null);
+                    unfriendMap.put("FriendsActivity/" + user_id + "/" + mCurrent_user.getUid(), null);
 
                     mRootRef.updateChildren(unfriendMap, new DatabaseReference.CompletionListener() {
                         @Override
@@ -339,7 +336,7 @@ public class UsersProfile extends AppCompatActivity {
 
                                 String error = databaseError.getMessage();
 
-                                Toast.makeText(UsersProfile.this, error, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfileActivity.this, error, Toast.LENGTH_SHORT).show();
 
 
                             }

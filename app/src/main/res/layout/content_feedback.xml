@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.rescuex_za.rescuex.Feedback"
+    tools:context="com.rescuex_za.rescuex.FeedbackActivity"
     android:background="@android:color/background_dark">
 
 
@@ -23,7 +23,7 @@
         android:layout_marginLeft="8dp"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/rate_us"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="18dp"
@@ -40,7 +40,7 @@
         android:text="@string/suggestions"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
-        android:layout_above="@+id/button3"
+        android:layout_above="@+id/rate_us"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="21dp"
@@ -52,8 +52,8 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
         android:id="@+id/textView2"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
+        android:layout_alignBaseline="@+id/rate_us"
+        android:layout_alignBottom="@+id/rate_us"
         android:layout_centerHorizontal="true"/>
     <Button
         android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
         android:text="Email us"
         android:layout_marginRight="58dp"
         android:layout_marginEnd="58dp"
-        android:id="@+id/button5"
+        android:id="@+id/email"
         android:layout_below="@+id/textView8"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>

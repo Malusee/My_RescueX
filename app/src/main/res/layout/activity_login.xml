@@ -81,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="If you don't have a RescueX account please register your account by pressing the register button below."
+            android:textColor="@color/black"
             android:textSize="14sp" />
 
         <TextView

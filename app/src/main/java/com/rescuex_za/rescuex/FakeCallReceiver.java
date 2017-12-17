@@ -3,8 +3,6 @@ package com.rescuex_za.rescuex;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class FakeCallReceiver extends BroadcastReceiver {
 

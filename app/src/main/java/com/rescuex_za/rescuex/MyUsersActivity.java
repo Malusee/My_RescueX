@@ -1,11 +1,15 @@
 package com.rescuex_za.rescuex;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
+import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,8 +20,10 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UsersActivity extends AppCompatActivity {
 
+public class MyUsersActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
     private RecyclerView mUsersList;
 
     private DatabaseReference mUsersDatabase;
@@ -28,7 +34,14 @@ public class UsersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users2);
+        setContentView(R.layout.users_activty_layout);
+
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Search Users");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -38,7 +51,6 @@ public class UsersActivity extends AppCompatActivity {
         mUsersList.setLayoutManager(mLayoutManager);
 
 
-
     }
 
 
@@ -46,16 +58,16 @@ public class UsersActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerAdapter<Users, MyUsersActivity.UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, MyUsersActivity.UsersViewHolder>(
+        FirebaseRecyclerAdapter<Users, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(
 
                 Users.class,
                 R.layout.users_single_layout,
-                MyUsersActivity.UsersViewHolder.class,
+                UsersViewHolder.class,
                 mUsersDatabase
 
         ) {
             @Override
-            protected void populateViewHolder(MyUsersActivity.UsersViewHolder usersViewHolder, Users users, int position) {
+            protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int position) {
 
                 usersViewHolder.setDisplayName(users.getName());
                 usersViewHolder.setUserStatus(users.getStatus());
@@ -67,7 +79,7 @@ public class UsersActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Intent profileIntent = new Intent(UsersActivity.this, ProfileActivity.class);
+                        Intent profileIntent = new Intent(MyUsersActivity.this, ProfileActivity.class);
                         profileIntent.putExtra("user_id", user_id);
                         startActivity(profileIntent);
 
@@ -94,14 +106,14 @@ public class UsersActivity extends AppCompatActivity {
 
         }
 
-        public void setDisplayName(String name) {
+        public void setDisplayName(String name){
 
             TextView userNameView = (TextView) mView.findViewById(R.id.user_single_name);
             userNameView.setText(name);
 
         }
 
-        public void setUserStatus(String status) {
+        public void setUserStatus(String status){
 
             TextView userStatusView = (TextView) mView.findViewById(R.id.user_single_status);
             userStatusView.setText(status);
@@ -109,7 +121,7 @@ public class UsersActivity extends AppCompatActivity {
 
         }
 
-        public void setUserImage(String thumb_image, Context ctx) {
+        public void setUserImage(String thumb_image, Context ctx){
 
             CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.user_single_image);
 
@@ -119,4 +131,9 @@ public class UsersActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
+
 }

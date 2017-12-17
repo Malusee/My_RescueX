@@ -83,5 +83,13 @@
     <string name="emergency_list">Emergency Contacts</string>
     <string name="change_display_name">Change Display Name</string>
     <string name="about_developer">About Developer</string>
+    <string name="fivemin">5 min</string>
+    <string name="tenMin">10 min</string>
+    <string name="email_sub">Email subject</string>
+    <string name="rescuex_email_address">RescueX Email Address</string>
+    <string name="feed_text">give feedback</string>
+    <string name="write_your_feedback">Write your feedback</string>
+    <string name="users_name">Display Name</string>
+    <string name="users_status">User default Status</string>
 
 </resources>

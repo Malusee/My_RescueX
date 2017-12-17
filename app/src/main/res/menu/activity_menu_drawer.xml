@@ -11,7 +11,7 @@
 
     <item
         android:id="@+id/nav_users_activity"
-        android:icon="@drawable/ic_person_black_24dp"
+        android:icon="@drawable/ic_person_add_black_24dp"
         android:title="RescueX Users"/>
 
 
@@ -21,7 +21,7 @@
         android:icon="@drawable/ic_history_black_24dp"/>
     <item
         android:id="@+id/nav_friends_layout"
-        android:title="Friends"
+        android:title="chats"
         android:icon="@drawable/ic_person_add_black_24dp"/>
     <item
         android:id="@+id/nav_help_layout"

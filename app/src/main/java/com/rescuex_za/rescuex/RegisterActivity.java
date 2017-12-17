@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     HashMap<String, String> userMap = new HashMap<>();
                     userMap.put("name", display_name);
-                    userMap.put("status", "Hi there, I'm the RescueX team.");
+                    userMap.put("status", "Hi there, I'm with the RescueX team.");
                     userMap.put("profile_picture", "default");
                     userMap.put("thumb_image", "default");
                     userMap.put("device_token", device_token);
