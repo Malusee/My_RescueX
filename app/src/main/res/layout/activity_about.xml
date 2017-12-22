@@ -7,6 +7,9 @@
     android:background="@android:color/background_dark"
     tools:context="com.rescuex_za.rescuex.About">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="fill_parent"
@@ -15,7 +18,8 @@
         android:text="setting up RescueX account"
         android:textAlignment="center"
         android:textColor="@android:color/holo_purple"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@id/user_Appbar" />
 
     <TextView
         android:id="@+id/textView11"
@@ -27,7 +31,8 @@
         android:layout_marginTop="13dp"
         android:text="To use RescueX emergency alert services you need to register if you do not have an account registered with us. This is Mandatory and will be used to send a message to your friends if you are in danger and need them to come help you. You are asked to provide valid details when registering. "
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp" />
+        android:textSize="15sp"/>
+
 
     <TextView
         android:id="@+id/textView12"

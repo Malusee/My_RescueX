@@ -7,17 +7,17 @@
     android:background="@android:color/background_dark"
     tools:context="com.rescuex_za.rescuex.Home">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
 
     <TextView
         android:id="@+id/wlcm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
+        android:layout_below="@+id/user_Appbar"
+        android:layout_marginStart="38dp"
         android:text="Welcome to Rescue"
         android:textColor="@android:color/white"
         android:textSize="28sp" />
@@ -38,9 +38,8 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/user_Appbar"
         android:layout_toEndOf="@+id/wlcm"
-        android:layout_toRightOf="@+id/wlcm"
         android:text="X"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="32sp" />

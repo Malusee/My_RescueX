@@ -6,15 +6,19 @@ package com.rescuex_za.rescuex;
 
 public class Messages {
 
+    String message,type,from;
+    long time;
+    boolean seen;
 
-    private String message, type;
-    private long  time;
-    private boolean seen;
-
-    private String from;
-
-    public Messages(String from) {
-        this.from = from;
+    public Messages(){
+        // for datashnap shot
+    }
+    public Messages(String message, String type, long time, boolean seen, String from) {
+        this.message = message;
+        this.type = type;
+        this.time = time;
+        this.seen = seen;
+        this.from=from;
     }
 
     public String getFrom() {
@@ -23,13 +27,6 @@ public class Messages {
 
     public void setFrom(String from) {
         this.from = from;
-    }
-
-    public Messages(String message, String type, long time, boolean seen) {
-        this.message = message;
-        this.type = type;
-        this.time = time;
-        this.seen = seen;
     }
 
     public String getMessage() {
@@ -63,9 +60,4 @@ public class Messages {
     public void setSeen(boolean seen) {
         this.seen = seen;
     }
-
-    public Messages(){
-
-    }
-
 }

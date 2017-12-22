@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.rescuex_za.rescuex.statusActivity">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
 
     <android.support.design.widget.TextInputLayout

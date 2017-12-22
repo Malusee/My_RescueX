@@ -22,11 +22,19 @@ public class Help extends AppCompatActivity {
     TextView Policies;
     TextView Tipz;
     TextView emergencyz;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("RescueX Help");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         sets = (TextView) findViewById(R.id.haccount);
         friendz = (TextView) findViewById(R.id.hfriends);
         termz = (TextView) findViewById(R.id.h_terms);

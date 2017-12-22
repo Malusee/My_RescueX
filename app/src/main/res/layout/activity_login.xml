@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width='match_parent'
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +10,8 @@
     android:layout_height="match_parent"
     tools:context="com.rescuex_za.rescuex.Login">
 
-
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <ImageView
         android:id="@+id/imageView5"
@@ -16,6 +21,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_weight="0.99"
+        android:layout_marginTop="50dp"
         android:background="@android:color/background_dark"
         app:srcCompat="@drawable/rescue_logo" />
 
@@ -23,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="320dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="145dp"
         android:orientation="vertical">
 
         <EditText
@@ -47,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="260dp"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="250dp"
         android:orientation="horizontal">
 
         <Button
@@ -73,7 +79,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="255dp"
+        android:layout_marginTop="300dp"
         android:orientation="vertical">
 
         <TextView
@@ -98,3 +104,4 @@
     </LinearLayout>
 
 </RelativeLayout>
+</ScrollView>

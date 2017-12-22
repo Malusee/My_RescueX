@@ -1,18 +1,19 @@
 package com.rescuex_za.rescuex;
 
 import android.app.ProgressDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-
-import java.text.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,7 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         mFriendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req");
-        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("FriendsActivity");
+        mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("Friends");
         mNotificationDatabase = FirebaseDatabase.getInstance().getReference().child("notifications");
         mCurrent_user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -76,7 +78,7 @@ public class ProfileActivity extends AppCompatActivity {
 
 
         mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setTitle("Loading MyUsersActivity Data");
+        mProgressDialog.setTitle("Loading User Data");
         mProgressDialog.setMessage("Please wait while we load the user data.");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
@@ -149,7 +151,7 @@ public class ProfileActivity extends AppCompatActivity {
                                     if(dataSnapshot.hasChild(user_id)){
 
                                         mCurrent_state = "friends";
-                                        mProfileSendReqBtn.setText("Unfriend this Person");
+                                        mProfileSendReqBtn.setText("Unfriend "+mProfileName.getText());
 
                                         mDeclineBtn.setVisibility(View.INVISIBLE);
                                         mDeclineBtn.setEnabled(false);
@@ -274,8 +276,8 @@ public class ProfileActivity extends AppCompatActivity {
                     final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
 
                     Map friendsMap = new HashMap();
-                    friendsMap.put("FriendsActivity/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
-                    friendsMap.put("FriendsActivity/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
+                    friendsMap.put("Friends/" + mCurrent_user.getUid() + "/" + user_id + "/date", currentDate);
+                    friendsMap.put("Friends/" + user_id + "/"  + mCurrent_user.getUid() + "/date", currentDate);
 
 
                     friendsMap.put("Friend_req/" + mCurrent_user.getUid() + "/" + user_id, null);
@@ -291,7 +293,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                 mProfileSendReqBtn.setEnabled(true);
                                 mCurrent_state = "friends";
-                                mProfileSendReqBtn.setText("Unfriend this Person");
+                                mProfileSendReqBtn.setText("Unfriend " + mProfileName.getText());
 
                                 mDeclineBtn.setVisibility(View.INVISIBLE);
                                 mDeclineBtn.setEnabled(false);
@@ -316,8 +318,8 @@ public class ProfileActivity extends AppCompatActivity {
                 if(mCurrent_state.equals("friends")){
 
                     Map unfriendMap = new HashMap();
-                    unfriendMap.put("FriendsActivity/" + mCurrent_user.getUid() + "/" + user_id, null);
-                    unfriendMap.put("FriendsActivity/" + user_id + "/" + mCurrent_user.getUid(), null);
+                    unfriendMap.put("Friends/" + mCurrent_user.getUid() + "/" + user_id, null);
+                    unfriendMap.put("Friends/" + user_id + "/" + mCurrent_user.getUid(), null);
 
                     mRootRef.updateChildren(unfriendMap, new DatabaseReference.CompletionListener() {
                         @Override

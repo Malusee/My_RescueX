@@ -6,6 +6,7 @@ import android.hardware.Camera;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -15,10 +16,17 @@ public class FlashLight extends AppCompatActivity {
     Camera.Parameters parameters;
     boolean isflash=false;
     boolean isOn=false;
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flash_light);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Flash light");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageButton=(ImageButton)findViewById(R.id.flashbtn);
         if (getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)){
 

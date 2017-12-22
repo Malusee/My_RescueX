@@ -4,9 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+
     tools:context="com.rescuex_za.rescuex.Share"
     android:background="@android:color/background_dark">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:id="@+id/textView27"
@@ -29,4 +32,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="51dp"
         android:text="share" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

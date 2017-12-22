@@ -8,16 +8,20 @@
     tools:context="com.rescuex_za.rescuex.Feedback"
     android:background="@android:color/background_dark">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/user_Appbar"
+        android:layout_marginTop="31dp"
         android:text="@string/feeds"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/rate_us"
@@ -27,7 +31,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="34dp"
         android:layout_marginStart="68dp"
-        android:text="Rate Us" />
+        android:text="Rate Us"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="68dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -47,7 +53,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/rate_us"
         android:layout_marginEnd="58dp"
-        android:text="Email us" />
+        android:text="Email us"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="58dp" />
 <ImageView
 android:id="@+id/imageView2"
 android:layout_width="fill_parent"

@@ -9,6 +9,7 @@
     tools:context="com.rescuex_za.rescuex.Privacy">
 
 
+
     <TextView
         android:id="@+id/textView30"
         android:layout_width="fill_parent"

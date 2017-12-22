@@ -6,6 +6,8 @@
     android:background="@color/black"
     tools:context="com.rescuex_za.rescuex.Profile">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circleImageView"
@@ -46,7 +48,9 @@
         android:layout_alignBottom="@+id/status_btn"
         android:layout_alignParentStart="true"
         android:layout_marginStart="28dp"
-        android:text="@string/Profile_picture"/>
+        android:text="@string/Profile_picture"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="28dp" />
 
     <Button
         android:id="@+id/status_btn"
@@ -56,6 +60,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="68dp"
         android:layout_marginEnd="29dp"
-        android:text="@string/status_button"/>
+        android:text="@string/status_button"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="29dp" />
 
 </RelativeLayout>

@@ -62,11 +62,19 @@ public class Profile extends AppCompatActivity {
     private StorageReference mPictureStorage;
 
     private ProgressDialog mProgressDialog;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mDisplay_image = (CircleImageView) findViewById(R.id.circleImageView);
         btn = (Button) findViewById(R.id.picture_btn);
         mdisplay_name = (TextView) findViewById(R.id.disp_name);

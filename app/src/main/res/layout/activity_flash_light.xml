@@ -7,19 +7,21 @@
     android:background="@android:color/background_dark"
     tools:context="com.rescuex_za.rescuex.FlashLight">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/user_Appbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
         android:gravity="center"
         android:text="@string/torch"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:layout_marginTop="26dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/imageView10"

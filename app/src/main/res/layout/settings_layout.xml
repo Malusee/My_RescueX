@@ -6,72 +6,40 @@
     android:layout_height="match_parent"
     tools:context="com.rescuex_za.rescuex.Settings">
 
-    <EditText
-        android:id="@+id/emergency_contacts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/change_display_name"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="21dp"
-        android:clickable="true"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/change_display_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/about_developer"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="17dp"
-        android:clickable="true"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/about_developer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/change_display_name"
-        android:layout_marginBottom="210dp"
-        android:clickable="true"
-        android:editable="false"
-        android:ems="10"
-        android:inputType="textPersonName" />
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:id="@+id/contacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/emergency_contacts"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/change_name"
+        android:layout_marginTop="95dp"
         android:text="@string/emergency_list"
+        android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/change_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/change_display_name"
-        android:layout_alignStart="@+id/change_display_name"
-        android:layout_alignTop="@+id/change_display_name"
+        android:layout_alignStart="@+id/developer_info"
+        android:layout_below="@+id/contacts"
+        android:layout_marginTop="42dp"
         android:text="@string/change_display_name"
+        android:textColor="@android:color/black"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/developer_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/about_developer"
-        android:layout_alignStart="@+id/about_developer"
-        android:layout_alignTop="@+id/about_developer"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/change_name"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="36dp"
         android:text="@string/about_developer"
+        android:textColor="@android:color/black"
         android:textSize="18sp" />
 </RelativeLayout>

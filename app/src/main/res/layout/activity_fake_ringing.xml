@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rescuex_za.rescuex.mFakeRingingActivity">
+    tools:context="com.rescuex_za.rescuex.FakeRingingActivity">
 
-
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/textView1"
-        android:text="@string/incomingcall"/>
+        android:text="@string/incomingcall"
+    android:layout_below="@id/user_Appbar" />
     <TextView
         android:id="@+id/chosenfakename"
         android:layout_width="wrap_content"

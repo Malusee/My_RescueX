@@ -17,36 +17,27 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        String notification_title = remoteMessage.getNotification().getTitle();
-        String notification_message = remoteMessage.getNotification().getBody();
+        String title= remoteMessage.getNotification().getTitle();
+        String message = remoteMessage.getNotification().getBody();
 
-        String click_action = remoteMessage.getNotification().getClickAction();
+        String from_userId = remoteMessage.getData().get("from_user_id");
 
-        String from_user_id = remoteMessage.getData().get("from_user_id");
+        String intentFilter = remoteMessage.getNotification().getClickAction();
 
-        NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle(notification_title)
-                        .setContentText(notification_message);
+        android.support.v7.app.NotificationCompat.Builder Nbuilder = new android.support.v7.app.NotificationCompat.Builder(getApplicationContext());
 
-        Intent resultIntent = new Intent(click_action);
-        resultIntent.putExtra("user_id", from_user_id);
+        Nbuilder.setContentTitle(title);
+        Nbuilder.setContentText(message);
+        Nbuilder.setAutoCancel(true);
 
+        Intent intent= new Intent(intentFilter);
+        intent.putExtra("user_id",from_userId);
 
-        PendingIntent resultPendingIntent =
-                PendingIntent.getActivity(
-                        this,
-                        0,
-                        resultIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
-        mBuilder.setContentIntent(resultPendingIntent);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        Nbuilder.setContentIntent(pendingIntent);
 
-        // Sets an ID for the notification
-        int mNotificationId = (int) System.currentTimeMillis();
-        NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        mNotifyMgr.notify(mNotificationId, mBuilder.build());
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(100, Nbuilder.build());
 
     }
 }

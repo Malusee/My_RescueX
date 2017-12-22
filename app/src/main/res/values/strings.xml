@@ -81,7 +81,7 @@
     <string name="title_activity_history">History</string>
     <string name="title_activity_friends">Friends</string>
     <string name="emergency_list">Emergency Contacts</string>
-    <string name="change_display_name">Change Display Name</string>
+    <string name="change_display_name">Customize RescueX</string>
     <string name="about_developer">About Developer</string>
     <string name="fivemin">5 min</string>
     <string name="tenMin">10 min</string>
@@ -91,5 +91,8 @@
     <string name="write_your_feedback">Write your feedback</string>
     <string name="users_name">Display Name</string>
     <string name="users_status">User default Status</string>
+    <string name="sign_out_speech">If you press the button below you will have to log in again when oppening the App, you won\'t receive notifications when you log out.</string>
+    <string name="dankie">Thank you for using RescueX.</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 </resources>

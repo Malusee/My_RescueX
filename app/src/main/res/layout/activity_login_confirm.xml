@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/background_dark"
     tools:context="com.rescuex_za.rescuex.LoginConfirm">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:id="@+id/textView18"
@@ -15,7 +18,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="Welcome Back"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -52,5 +55,15 @@
         android:layout_marginTop="15dp"
         android:text="If you do not have friends linked in your account please add them on the friends page in the menu, We hope you will find the app useful and enjoy using it. "
         android:textColor="@color/colorPrimaryDark" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

@@ -27,19 +27,21 @@ public class statusActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
 
     private ProgressDialog mProgress;
-
+    private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
 
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Update your status");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         currentUser= FirebaseAuth.getInstance().getCurrentUser();
         String uid= currentUser.getUid();
         myStatusDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-
-
-
-
 
 
         String status_value=getIntent().getStringExtra("status_value");

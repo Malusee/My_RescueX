@@ -16,11 +16,18 @@ import android.widget.Button;
 public class Feedback extends AppCompatActivity {
 
     private Button email_us;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Give us Feedback");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         email_us = (Button)findViewById(R.id.email);
         email_us.setOnClickListener(new View.OnClickListener() {

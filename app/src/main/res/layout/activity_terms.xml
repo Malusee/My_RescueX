@@ -8,6 +8,8 @@
     android:background="@android:color/background_dark"
     tools:context="com.rescuex_za.rescuex.Terms">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
 
     <TextView
         android:id="@+id/textView29"

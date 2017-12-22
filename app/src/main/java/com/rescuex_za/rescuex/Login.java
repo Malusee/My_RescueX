@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
     Button log;
     Button reg;
     TextView forgotpass;
+    private Toolbar mToolbar;
 
     private ProgressDialog mLoginProgress;
     private FirebaseAuth mAuth;
@@ -45,6 +47,10 @@ public class Login extends AppCompatActivity {
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Login");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etl_email=(EditText)findViewById(R.id.login_email);
         etl_pass=(EditText)findViewById(R.id.login_password);

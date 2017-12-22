@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ActionBarContextView;
+import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,12 +23,18 @@ public class FakeRingingActivity extends AppCompatActivity {
 
     private String networkCarrier;
     private MediaPlayer mp;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fake_ringing);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Incoming Call");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView fakeName = (TextView)findViewById(R.id.chosenfakename);
         TextView fakeNumber = (TextView)findViewById(R.id.chosenfakenumber);

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,12 +28,19 @@ public class FakeCalling extends AppCompatActivity {
     private RadioButton secondOption;
     private RadioButton thirdOption;
     private RadioButton forthOption;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fake_calling);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Fake Calling");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fakeName = (EditText)findViewById(R.id.fakename);
         fakeNumber = (EditText)findViewById(R.id.fakenumber);

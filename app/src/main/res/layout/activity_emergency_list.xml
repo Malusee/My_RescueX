@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.rescuex_za.rescuex.EmergencyList">
 
+    <include layout="@layout/app_bar_layout"
+        android:id="@+id/user_Appbar"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/emergency_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="5dp"
-        android:layout_alignParentStart="true"></android.support.v7.widget.RecyclerView>
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/user_Appbar"
+        android:layout_alignParentLeft="true"></android.support.v7.widget.RecyclerView>
 
 
 </RelativeLayout>

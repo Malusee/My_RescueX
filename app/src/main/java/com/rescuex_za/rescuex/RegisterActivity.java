@@ -31,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button regbtn;
 
     private DatabaseReference mDatabase;
+    private Toolbar mToolbar;
 
     private FirebaseAuth mAuth;
     private ProgressDialog mRegProgress;
@@ -42,6 +43,12 @@ public class RegisterActivity extends AppCompatActivity {
         mRegProgress= new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Registration");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDisplayName=(EditText)findViewById(R.id.reg_name);
         mEmail=(EditText)findViewById(R.id.reg_email);

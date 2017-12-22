@@ -12,15 +12,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class Share extends AppCompatActivity {
 
-    Button share;
+    private Button share;
+    private AdView mAdView;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
+
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Share App to Friends");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         share= (Button)findViewById(R.id.share_btn);
@@ -29,7 +44,7 @@ public class Share extends AppCompatActivity {
             public void onClick(View v) {
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                String shareBody="The App is called RescueX and your can find it on google playstore/istore or follow this link:";
+                String shareBody="hey there, i'm now with the RescueX team. Get your self RescueX on Playstore and istore, stay safe.";
                 String shareSub="Check out this new safety App";
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSub);
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
