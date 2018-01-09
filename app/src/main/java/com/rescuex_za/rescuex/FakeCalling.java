@@ -40,6 +40,7 @@ public class FakeCalling extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Fake Calling");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fakeName = (EditText)findViewById(R.id.fakename);

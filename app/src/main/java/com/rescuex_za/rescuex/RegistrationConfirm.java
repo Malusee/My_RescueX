@@ -23,6 +23,7 @@ public class RegistrationConfirm extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Registration Confirmation");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mAdView = (AdView) findViewById(R.id.adView);

@@ -21,6 +21,7 @@ public class LoginConfirm extends Login {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Login Confirmation");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mAdView = (AdView) findViewById(R.id.adView);

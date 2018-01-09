@@ -73,6 +73,7 @@ public class Profile extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Profile");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDisplay_image = (CircleImageView) findViewById(R.id.circleImageView);

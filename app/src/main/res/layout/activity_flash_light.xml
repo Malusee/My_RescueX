@@ -39,6 +39,7 @@
         android:layout_below="@+id/imageView10"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
-        app:srcCompat="@drawable/off_btn" />
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/new_torch_off" />
 
 </RelativeLayout>

@@ -10,19 +10,6 @@
     <include layout="@layout/app_bar_layout"
         android:id="@+id/user_Appbar"/>
 
-    <TextView
-        android:id="@+id/profile_displayName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/profile_totalFriends"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="70dp"
-        android:text="Display Name"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:textColor="@color/colorPrimaryDark"
-        android:layout_alignParentLeft="true" />
 
     <ImageView
         android:id="@+id/profile_image"
@@ -34,6 +21,19 @@
         android:layout_alignParentTop="true"
         app:srcCompat="@drawable/my_profile"
         android:layout_marginTop="55dp"/>
+
+    <TextView
+        android:id="@+id/profile_displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/profile_totalFriends"
+        android:layout_below="@+id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        android:text="Display Name"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:textColor="@color/colorPrimaryDark" />
 
     <TextView
         android:id="@+id/profile_status"

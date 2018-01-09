@@ -3,8 +3,8 @@ package com.rescuex_za.rescuex;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Message;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -37,7 +33,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyMessag
     FirebaseAuth mAuth;
     private DatabaseReference mUserDatabase;
 
-    public MessageAdapter(Context context,ArrayList<Messages> arrayListMessages){
+    public MessageAdapter(Context context, ArrayList<Messages> arrayListMessages){
         this.arrayListMessages = arrayListMessages;
         mcontext = context;
     }
@@ -64,9 +60,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyMessag
 
         if(mCurrentUser.equals(messages.getFrom())){
             holder.textViewMessage.setBackgroundResource(R.drawable.custom_message_bg_primary);
+            holder.textViewMessage.setGravity(Gravity.RIGHT);
             holder.textViewMessage.setTextColor(Color.WHITE);
         }else{
             holder.textViewMessage.setBackgroundResource(R.drawable.custom_message_bd_white);
+            holder.textViewMessage.setGravity(Gravity.LEFT);
             holder.textViewMessage.setTextColor(Color.BLACK);
         }
         holder.textViewMessage.setText(messages.getMessage());

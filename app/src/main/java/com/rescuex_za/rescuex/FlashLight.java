@@ -26,6 +26,7 @@ public class FlashLight extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Flash light");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageButton=(ImageButton)findViewById(R.id.flashbtn);
         if (getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)){
@@ -41,14 +42,14 @@ public class FlashLight extends AppCompatActivity {
                 if (isflash){
 
                     if (!isOn){
-                        imageButton.setImageResource(R.drawable.off_btn);
+                        imageButton.setImageResource(R.drawable.new_torch_off);
                         parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                         camera.setParameters(parameters);
                         camera.startPreview();
                         isOn=true;
                     }
                     else{
-                        imageButton.setImageResource(R.drawable.button);
+                        imageButton.setImageResource(R.drawable.light_on);
                         parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                         camera.setParameters(parameters);
                         camera.stopPreview();

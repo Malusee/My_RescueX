@@ -1,6 +1,7 @@
 package com.rescuex_za.rescuex;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class statusActivity extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Update your status");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         currentUser= FirebaseAuth.getInstance().getCurrentUser();
@@ -65,6 +67,10 @@ public class statusActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         if(task.isSuccessful()){
+                            Intent profIntent = new Intent(statusActivity.this, Profile.class);
+                            profIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(profIntent);
+                            finish();
                             mProgress.dismiss();
                         }
                         else{

@@ -10,10 +10,18 @@ import android.widget.Button;
 
 public class Terms extends AppCompatActivity {
 
+    private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms);
+
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Terms and Conditions");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 

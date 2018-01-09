@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Help extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class Help extends AppCompatActivity {
     TextView Tipz;
     TextView emergencyz;
     private Toolbar mToolbar;
+    private Button serach;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class Help extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("RescueX Help");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sets = (TextView) findViewById(R.id.haccount);
@@ -41,6 +44,14 @@ public class Help extends AppCompatActivity {
         Policies = (TextView) findViewById(R.id.hprivacy);
         Tipz = (TextView) findViewById(R.id.htips);
         emergencyz = (TextView) findViewById(R.id.halert);
+        serach = (Button)findViewById(R.id.button);
+        serach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent searchIntent = new Intent(Help.this, HelpResponse.class);
+                startActivity(searchIntent);
+            }
+        });
         emergencyz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

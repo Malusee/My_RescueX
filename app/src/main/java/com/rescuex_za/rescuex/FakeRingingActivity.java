@@ -34,6 +34,7 @@ public class FakeRingingActivity extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Incoming Call");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView fakeName = (TextView)findViewById(R.id.chosenfakename);

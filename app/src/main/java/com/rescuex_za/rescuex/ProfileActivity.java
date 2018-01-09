@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -41,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference mFriendReqDatabase;
     private DatabaseReference mFriendDatabase;
     private DatabaseReference mNotificationDatabase;
+    private Toolbar mToolbar;
 
     private DatabaseReference mRootRef;
 
@@ -53,7 +55,14 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_profile);
 
+        mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Profile");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         final String user_id = getIntent().getStringExtra("user_id");
+
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
 

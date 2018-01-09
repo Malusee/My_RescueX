@@ -2,12 +2,14 @@ package com.rescuex_za.rescuex;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -17,15 +19,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.squareup.picasso.Picasso;
 
+import java.util.Comparator;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity   {
+
 
     private Toolbar mToolbar;
     private RecyclerView mUsersList;
     private FirebaseRecyclerAdapter<Users, UsersViewHolder> recyclerAdapter;
     private DatabaseReference mUsersDatabase;
     private FirebaseAuth mAuth;
+
+    private EditText searching;
+    private EditText search;
 
 
     @Override
@@ -36,7 +44,14 @@ public class UsersActivity extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Search Users");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        search = (EditText)findViewById(R.id.search_user);
+        searching.setBackgroundResource(R.drawable.custom_message_bd_white);
+
+
 
         mUsersList = (RecyclerView) findViewById(R.id.users_list);
         mUsersList.setLayoutManager(new LinearLayoutManager(this));
@@ -68,6 +83,7 @@ public class UsersActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(UsersViewHolder viewHolder, Users model, int position) {
 
+
                 viewHolder.setDisplayName(model.getName());
                 viewHolder.setUserStatus(model.getStatus());
                 viewHolder.setUserImage(model.getThumb_image(),UsersActivity.this);
@@ -91,6 +107,7 @@ public class UsersActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -105,7 +122,7 @@ public class UsersActivity extends AppCompatActivity {
     }
 
 
-    public static class UsersViewHolder extends RecyclerView.ViewHolder {
+    public abstract class UsersViewHolder extends RecyclerView.ViewHolder implements Filterable {
 
         View mView;
 
@@ -115,6 +132,7 @@ public class UsersActivity extends AppCompatActivity {
             mView = itemView;
 
         }
+
 
         public void setDisplayName(String name) {
 

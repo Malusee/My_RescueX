@@ -22,6 +22,7 @@ public class Settings extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Settings");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         emergency = (TextView)findViewById(R.id.contacts);
@@ -31,7 +32,7 @@ public class Settings extends AppCompatActivity {
         emergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent emergencyIntent= new Intent(Settings.this, EmergencyList.class);
+                Intent emergencyIntent= new Intent(Settings.this, EmergencyActivity.class);
                 startActivity(emergencyIntent);
             }
         });

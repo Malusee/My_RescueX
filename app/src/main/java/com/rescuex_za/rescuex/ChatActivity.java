@@ -90,6 +90,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
         mChatMessageView = (EditText) findViewById(R.id.chat_message_view);
         mChatAddBtn = (ImageButton) findViewById(R.id.chat_add_btn);
 
@@ -119,6 +120,8 @@ public class ChatActivity extends AppCompatActivity {
         mRootRef = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         mCurrentUserId =  mAuth.getCurrentUser().getUid();
+
+
 
         //------- IMAGE STORAGE ---------
         mImageStorage = FirebaseStorage.getInstance().getReference();
@@ -196,6 +199,7 @@ public class ChatActivity extends AppCompatActivity {
 
         // Retrieving the chat messages into recyclerview
         LoadMessages();
+        mRefreshLayout.setRefreshing(true);
         mRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -207,6 +211,8 @@ public class ChatActivity extends AppCompatActivity {
 
                 // Load message
                 LoadMessages();
+
+
             }
         });
 
@@ -232,6 +238,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 Messages messages = dataSnapshot.getValue(Messages.class);
                 arrayList_Messages.add(messages);
+                mRefreshLayout.setRefreshing(true);
                 mAdapter.notifyDataSetChanged();
 
                 mMessagesList.scrollToPosition(arrayList_Messages.size()-1);
@@ -261,7 +268,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
     // send button
@@ -405,6 +411,16 @@ public class ChatActivity extends AppCompatActivity {
 
         //showing name on toolbar
         mTitleView.setText(userName);
+        mTitleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profileIntent = new Intent(ChatActivity.this, ProfileActivity.class);
+                profileIntent.putExtra("user_id", mChatUser);
+                startActivity(profileIntent);
+            }
+        });
+
+
 
 
     }

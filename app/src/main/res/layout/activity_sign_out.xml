@@ -15,41 +15,34 @@
         android:id="@+id/log_outbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView44"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="55dp"
+        android:layout_below="@+id/textView45"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:layout_marginStart="50dp"
         android:background="@android:color/transparent"
-        app:srcCompat="@drawable/log_out"
-        android:layout_alignLeft="@+id/textView44"
-        android:layout_marginLeft="55dp" />
+        app:srcCompat="@drawable/new_log_out_btn" />
 
     <TextView
         android:id="@+id/textView44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="28dp"
+        android:layout_alignStart="@+id/adView"
+        android:layout_below="@+id/user_Appbar"
+        android:layout_marginStart="28dp"
         android:text="@string/dankie"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="78dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView44"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/sign_out_speech"
         android:textColor="@color/colorPrimary"
-        android:textSize="14sp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="14dp" />
+        android:textSize="14sp" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"

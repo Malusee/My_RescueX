@@ -1,5 +1,7 @@
 package com.rescuex_za.rescuex;
 
+
+
 /**
  * Created by Asus on 12/8/2017.
  */
@@ -12,7 +14,7 @@ public class Users {
     public String thumb_image;
 
 
-    public Users(){
+    public Users() {
 
     }
 
@@ -56,6 +58,4 @@ public class Users {
     }
 
 }
-
-
 

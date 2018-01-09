@@ -23,6 +23,7 @@ public class Home extends AppCompatActivity {
         mToolbar= (Toolbar) findViewById(R.id.user_Appbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Register or Log In");
+        mToolbar.setTitleTextColor(android.graphics.Color.WHITE);
 
 
         home_reg=(Button)findViewById(R.id.home_regbtn);
